@@ -27,15 +27,34 @@
 
      <?php
       class Book{
+        var $name;
         var $title;
         var $author;
         var $pages;
       }
 
       $book1 = new Book;
+      $book1->name = "Book 1";
       $book1->title = "Harry Potter";
       $book1->author = "JK Rowling";
-      $book->pages=400;
+      $book1->pages = 400;
+
+      echo "<h3>", $book1->name, "</h3>", "<br>";
+      echo $book1->title, "<br>";
+      echo $book1->author, "<br>";
+      echo $book1->pages, "<br>";
+
+      $book2 = new Book;
+      $book2->name = "Book 2";
+      $book2->title = "Brandon Is Awesome";
+      $book2->author = "Brandon";
+      $book2->pages = 1;
+
+      echo "<h3>", $book2->name, "</h3>", "<br>";
+      echo $book2->title, "<br>";
+      echo $book2->author, "<br>";
+      echo $book2->pages, "<br>";
+
       ?>
 
   </body>
