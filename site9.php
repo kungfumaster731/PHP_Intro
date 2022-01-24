@@ -13,7 +13,13 @@
 
         function __construct($title, $rating){
           $this->title = $title;
-          $this->rating = $rating;
+          $rating = strtoupper($rating);
+          if($rating == "G" || $rating == "PG" || $rating == "PG-13" || $rating == "TV-MA" || $rating == "R" || $rating == "NR"){
+            $this->rating = $rating;
+          }
+          else{
+            $this->rating = "NR";
+          }
         }
 
         function getRating(){
@@ -21,6 +27,7 @@
         }
 
         function setRating($rating){
+          $rating = strtoupper($rating);
           if($rating == "G" || $rating == "PG" || $rating == "PG-13" || $rating == "TV-MA" || $rating == "R" || $rating == "NR"){
             $this->rating = $rating;
           }
@@ -30,7 +37,7 @@
         }
       }
       $avengers = new Movie("Avengers", "PG-13");
-      $avengers->setRating("PG");
+      $avengers->setRating("r");
       echo $avengers->getRating();
      ?>
   </body>
